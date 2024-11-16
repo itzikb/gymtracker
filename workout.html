@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Workout Form</title>
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            font-family: Arial;
+        }
+        h1 {
+            text-align: left;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #444;
+            margin: 20px 0 15px 0;
+            border-bottom: 2px solid #444;
+            padding-bottom: 5px;
+        }
+        .row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        .field-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        input {
+            width: 4em;
+            height: 30px;
+            padding: 4px 8px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        input[type="text"].date-input {
+            width: 8em;
+        }
+        button {
+            padding: 8px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        label {
+            white-space: nowrap;
+            min-width: 150px;
+        }
+        .exercise-category {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+        .max-label, .last-label {
+            font-weight: bold;
+            margin-left: 15px;
+            min-width: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+        <h1>Workout Tracker</h1>
+        <form id="textForm">
+            <div class="exercise-category">
+                <h2>Legs</h2>
+                <div class="row">
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="legs_quadrant_done">
+                    </div>
+                    <div class="field-group">
+                        <label>Legs Quadrant</label>
+                        <input type="text" name="legs_quadrant">
+                    </div>
+                    <div class="field-group">
+                        <span class="last-label">Last</span>
+                        <input type="text" name="legs_quadrant_last" readonly>
+                    </div>
+                    <div class="field-group">
+                        <span class="last-label">Date</span>
+                        <input type="text" class="date-input" name="legs_quadrant_date" readonly>
+                    </div>
+                    <div class="field-group">
+                        <span class="max-label">Max</span>
+                        <input type="text" name="legs_quadrant_max">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="legs_push_done">
+                    </div>
+                    <div class="field-group">
+                        <label>Legs Push</label>
+                        <input type="text" name="legs_push">
+                    </div>
+                    <div class="field-group">
+                        <span class="last-label">Last</span>
+                        <input type="text" name="legs_push_last" readonly>
+                    </div>
+                    <div class="field-group">
+                        <span class="last-label">Date</span>
+                        <input type="text" class="date-input" name="legs_push_date" readonly>
+                    </div>
+                    <div class="field-group">
+                        <span class="max-label">Max</span>
+                        <input type="text" name="legs_push_max">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="legs_butt_done">
+                    </div>
+                    <div class="field-group">
+                        <label>Legs To Butt</label>
+                        <input type="text" name="legs_butt">
+                    </div>
+                    <div class="field-group">
+                        <span class="last-label">Last</span>
+                        <input type="text" name="legs_butt_last" readonly>
+                    </div>
+                    <div class="field-group">
+                        <span class="last-label">Date</span>
+                        <input type="text" class="date-input" name="legs_butt_date" readonly>
+                    </div>
+                    <div class="field-group">
+                        <span class="max-label">Max</span>
+                        <input type="text" name="legs_butt_max">
+                    </div>
+                </div>
+            </div>
+
+            <div class="exercise-category">
+                <h2>Back</h2>
+                <div class="row">
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="back_rowing_done">
+                    </div>
+                    <div class="field-group">
+                        <label>Back Rowing</label>
+                        <input type="text" name="back_rowing">
+                    </div>
+                    <div class="field-group">
+                        <span class="last-label">Last</span>
+                        <input type="text" name="back_rowing_last" readonly>
+                    </div>
+                    <div class="field-group">
+                        <span class="last-label">Date</span>
+                        <input type="text" class="date-input" name="back_rowing_date" readonly>
+                    </div>
+                    <div class="field-group">
+                        <span class="max-label">Max</span>
+                        <input type="text" name="back_rowing_max">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="back_pullup_done">
+                    </div>
+                    <div class="field-group">
+                        <label>Back Pull Up</label>
+                        <input type="text" name="back_pullup">
+                    </div>
+                    <div class="field-group">
+                        <span class="last-label">Last</span>
+                        <input type="text" name="back_pullup_last" readonly>
+                    </div>
+                    <div class="field-group">
+                        <span class="last-label">Date</span>
+                        <input type="text" class="date-input" name="back_pullup_date" readonly>
+                    </div>
+                    <div class="field-group">
+                        <span class="max-label">Min</span>
+                        <input type="text" name="back_pullup_min">
+                    </div>
+                </div>
+            </div>
+
+            <div class="exercise-category">
+                <h2>Chest</h2>
+                <div class="row">
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="chest_fly_done">
+                    </div>
+                    <div class="field-group">
+                        <label>Chest Fly Machine</label>
+                        <input type="text" name="chest_fly">
+                    </div>
+                    <div class="field-group">
+                        <span class="last-label">Last</span>
+                        <input type="text" name="chest_fly_last" readonly>
+                    </div>
+                    <div class="field-group">
+                        <span class="last-label">Date</span>
+                        <input type="text" class="date-input" name="chest_fly_date" readonly>
+                    </div>
+                    <div class="field-group">
+                        <span class="max-label">Max</span>
+                        <input type="text" name="chest_fly_max">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="chest_bench_done">
+                    </div>
+                    <div class="field-group">
+                        <label>Chest Bench Press</label>
+                        <input type="text" name="chest_bench">
+                    </div>
+                    <div class="field-group">
+                        <span class="last-label">Last</span>
+                        <input type="text" name="chest_bench_last" readonly>
+                    </div>
+                    <div class="field-group">
+                        <span class="last-label">Date</span>
+                        <input type="text" class="date-input" name="chest_bench_date" readonly>
+                    </div>
+                    <div class="field-group">
+                        <span class="max-label">Max</span>
+                        <input type="text" name="chest_bench_max">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="chest_dumbell_done">
+                    </div>
+                    <div class="field-group">
+                        <label>Chest Dumbell</label>
+                        <input type="text" name="chest_dumbell">
+                    </div>
+                    <div class="field-group">
+                        <span class="last-label">Last</span>
+                        <input type="text" name="chest_dumbell_last" readonly>
+                    </div>
+                    <div class="field-group">
+                        <span class="last-label">Date</span>
+                        <input type="text" class="date-input" name="chest_dumbell_date" readonly>
+                    </div>
+                    <div class="field-group">
+                        <span class="max-label">Max</span>
+                        <input type="text" name="chest_dumbell_max">
+                    </div>
+                </div>
+            </div>
+
+            <div class="exercise-category">
+                <h2>Shoulders</h2>
+                <div class="row">
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="shoulders_machine_done">
+                    </div>
+                    <div class="field-group">
+                        <label>Shoulders Machine</label>
+                        <input type="text" name="shoulders_machine">
+                    </div>
+                    <div class="field-group">
+                        <span class="last-label">Last</span>
+                        <input type="text" name="shoulders_machine_last" readonly>
+                    </div>
+                    <div class="field-group">
+                        <span class="last-label">Date</span>
+                        <input type="text" class="date-input" name="shoulders_machine_date" readonly>
+                    </div>
+                    <div class="field-group">
+                        <span class="max-label">Max</span>
+                        <input type="text" name="shoulders_machine_max">
+                    </div>
+                </div>
+            </div>
+
+            <div class="exercise-category">
+                <h2>Arms</h2>
+                <div class="row">
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="biceps_dumbell_done">
+                    </div>
+                    <div class="field-group">
+                        <label>Biceps Dumbell</label>
+                        <input type="text" name="biceps_dumbell">
+                    </div>
+                    <div class="field-group">
+                        <span class="last-label">Last</span>
+                        <input type="text" name="biceps_dumbell_last" readonly>
+                    </div>
+                    <div class="field-group">
+                        <span class="last-label">Date</span>
+                        <input type="text" class="date-input" name="biceps_dumbell_date" readonly>
+                    </div>
+                    <div class="field-group">
+                        <span class="max-label">Max</span>
+                        <input type="text" name="biceps_dumbell_max">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="biceps_machine_done">
+                    </div>
+                    <div class="field-group">
+                        <label>Biceps Machine</label>
+                        <input type="text" name="biceps_machine">
+                    </div>
+                    <div class="field-group">
+                        <span class="last-label">Last</span>
+                        <input type="text" name="biceps_machine_last" readonly>
+                    </div>
+                    <div class="field-group">
+                        <span class="last-label">Date</span>
+                        <input type="text" class="date-input" name="biceps_machine_date" readonly>
+                    </div>
+                    <div class="field-group">
+                        <span class="max-label">Max</span>
+                        <input type="text" name="biceps_machine_max">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="triceps_machine_done">
+                    </div>
+                    <div class="field-group">
+                        <label>Triceps Machine</label>
+                        <input type="text" name="triceps_machine">
+                    </div>
+                    <div class="field-group">
+                        <span class="last-label">Last</span>
+                        <input type="text" name="triceps_machine_last" readonly>
+                    </div>
+                    <div class="field-group">
+                        <span class="last-label">Date</span>
+                        <input type="text" class="date-input" name="triceps_machine_date" readonly>
+                    </div>
+                    <div class="field-group">
+                        <span class="max-label">Max</span>
+                        <input type="text" name="triceps_machine_max">
+                    </div>
+                </div>
+            </div>
+            
+            <button type="submit">Save All</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('textForm');
+        
+        function getCurrentDate() {
+            const today = new Date();
+            return today.toISOString().split('T')[0]; // Returns YYYY-MM-DD
+        }
+
+        // Load data
+        const loadData = () => {
+            const saved = localStorage.getItem('workout_data');
+            if (saved) {
+                const data = JSON.parse(saved);
+                Object.keys(data).forEach(field => {
+                    if (form[field]) {
+                        form[field].value = data[field];
+                    }
+                });
+            }
+        };
+
+        // Save data
+        form.onsubmit = (e) => {
+            e.preventDefault();
+            const data = JSON.parse(localStorage.getItem('workout_data') || '{}');
+            const currentDate = getCurrentDate();
+            const exercises = [
+                'legs_quadrant', 'legs_push', 'legs_butt',
+                'back_rowing', 'back_pullup',
+                'chest_fly', 'chest_bench', 'chest_dumbell',
+                'shoulders_machine',
+                'biceps_dumbell', 'biceps_machine', 'triceps_machine'
+            ];
+
+            exercises.forEach(exercise => {
+                if (form[`${exercise}_done`] && form[`${exercise}_done`].checked){
+                    const value = Number(form[exercise].value);
+                    const maxValue = form[`${exercise}_max`]?.value ?? '';
+                    const minValue = form[`${exercise}_min`]?.value ?? '';
+                    
+                    if (value) {
+                        // Save the previous value as last
+                        data[`${exercise}_last`] = value;
+                        data[`${exercise}_date`] = currentDate;
+                        // Save the new value
+                        data[exercise] = value;
+                        // Save max value
+
+                        if (value > Number(maxValue)) {
+                            data[`${exercise}_max`] = value;
+                        }
+                        if (form[`${exercise}_min`]){
+                            if (value < minValue || minValue === ''){
+                                data[`${exercise}_min`] = value;
+                        }
+                        // Update form fields
+                        form[`${exercise}_last`].value = data[`${exercise}_last`] || '';
+                        form[`${exercise}_date`].value = data[`${exercise}_date`] || '';
+                        if (form[`${exercise}_max`]){
+                            form[`${exercise}_max`].value = data[`${exercise}_max`] || '';
+                        }
+                        if (form[`${exercise}_min`]){
+                            form[`${exercise}_min`].value = data[`${exercise}_min`] || '';
+                        }
+                    }
+                }
+            }});
+            exercises.forEach(exercise => {
+                data[`${exercise}_done`] = false
+                form[`${exercise}_done`].checked = false
+            })
+            localStorage.setItem('workout_data', JSON.stringify(data));
+            alert('All data saved!');
+
+            loadData();
+
+        };
+
+        // Load saved data on page load
+        loadData();
+    </script>
+</body>
+</html>
