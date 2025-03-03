@@ -136,6 +136,50 @@
                         <input type="text" name="legs_butt_max">
                     </div>
                 </div>
+                <!-- New Twin Exercise -->
+                <div class="row">
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="legs_twins_done">
+                    </div>
+                    <div class="field-group">
+                        <label>Twins</label>
+                        <input type="text" name="legs_twins">
+                    </div>
+                    <div class="field-group">
+                        <span class="last-label">Last</span>
+                        <input type="text" name="legs_twins_last" readonly>
+                    </div>
+                    <div class="field-group">
+                        <span class="last-label">Date</span>
+                        <input type="text" class="date-input" name="legs_twins_date" readonly>
+                    </div>
+                    <div class="field-group">
+                        <span class="max-label">Max</span>
+                        <input type="text" name="legs_twins_max">
+                    </div>
+                </div>
+                <!-- New Legs Outside Exercise -->
+                <div class="row">
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="legs_outside_done">
+                    </div>
+                    <div class="field-group">
+                        <label>Legs Outside</label>
+                        <input type="text" name="legs_outside">
+                    </div>
+                    <div class="field-group">
+                        <span class="last-label">Last</span>
+                        <input type="text" name="legs_outside_last" readonly>
+                    </div>
+                    <div class="field-group">
+                        <span class="last-label">Date</span>
+                        <input type="text" class="date-input" name="legs_outside_date" readonly>
+                    </div>
+                    <div class="field-group">
+                        <span class="max-label">Max</span>
+                        <input type="text" name="legs_outside_max">
+                    </div>
+                </div>
             </div>
 
             <div class="exercise-category">
@@ -374,7 +418,7 @@
             const data = JSON.parse(localStorage.getItem('workout_data') || '{}');
             const currentDate = getCurrentDate();
             const exercises = [
-                'legs_quadrant', 'legs_push', 'legs_butt',
+                'legs_quadrant', 'legs_push', 'legs_butt', 'legs_twins', 'legs_outside',
                 'back_rowing', 'back_pullup',
                 'chest_fly', 'chest_bench', 'chest_dumbell',
                 'shoulders_machine',
@@ -401,6 +445,7 @@
                         if (form[`${exercise}_min`]){
                             if (value < minValue || minValue === ''){
                                 data[`${exercise}_min`] = value;
+                            }
                         }
                         // Update form fields
                         form[`${exercise}_last`].value = data[`${exercise}_last`] || '';
@@ -413,7 +458,7 @@
                         }
                     }
                 }
-            }});
+            });
             exercises.forEach(exercise => {
                 data[`${exercise}_done`] = false
                 form[`${exercise}_done`].checked = false
